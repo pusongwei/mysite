@@ -210,9 +210,9 @@ export default {
 		width: 100%;
 		height: 20px;
 		margin: 10px 0;
-		text-align: center;
+		text-align: right;
 		line-height: 20px;
-		color: #ccc;
+		color: #999;
 		font-size: 14px;
 		a{
 			color: #333;

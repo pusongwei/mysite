@@ -45,7 +45,7 @@
 				<div class="subscribe">订阅</div>
 			</div>
 		</div>
-		<audio :src="current.songfile[0].songfile_link" ref='audio'></audio>
+		<audio :src="current.songfile[0].songfile_link" ref='audio' autoplay="autoplay"></audio>
 	</div>
 </template>
 

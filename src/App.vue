@@ -1,5 +1,6 @@
 <template>
   <div id="app">
+    <loadingMove></loadingMove>
     <headerHome></headerHome>
     <router-view></router-view>
   </div>
@@ -7,17 +8,25 @@
 
 <script>
 import headerHome from '@/components/base/header.vue'
+import loadingMove from '@/components/base/loading.vue'
 /*import mybg from '@/lib/mybg.js'*/
 export default {
   name: 'app',
   components: {
-    headerHome
+    headerHome,
+    loadingMove
   }
 }
 </script>
 
 <style lang='less'>
   @import './lib/reset.css';
+  html,body{
+    user-select:text;
+  }
+  body{
+    background:url(assets/bg.jpg);
+  }
   #app{
     padding-top: 100px;
     width: 1080px;

@@ -6,7 +6,8 @@ import Resource from 'vue-resource'
 import App from './App'
 import router from './router'
 import Swiper from 'vue-awesome-swiper'
-
+import quillEditor from 'vue-quill-editor'
+Vue.use(quillEditor)
 Vue.use(Resource)
 Vue.use(Vuex)
 Vue.use(Swiper)
@@ -18,9 +19,7 @@ var store = new Vuex.Store({
     },
     mutations:{
         showUserName( event,flag){
-
             store.state.loadingShow = flag;
-
         }
     }
 })

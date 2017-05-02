@@ -86,7 +86,7 @@ export default {
 				a{
 					display: block;
 					width: 100%;
-					text-align: left;
+					text-align: center;
 					color: #fff;
 					opacity: 0.6;
 				}

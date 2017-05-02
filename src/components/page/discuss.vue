@@ -1,12 +1,11 @@
 <template>
-  <div class="discuss">
+  <div class="calendar">
     
   </div>
 </template>
 
 <script>
 export default {
-  name: 'discuss',
   data () {
     return {
       msg: 'Welcome to Your Vue.js App'
