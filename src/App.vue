@@ -33,6 +33,9 @@ export default {
     margin:auto;
   }
   @media all and (max-width: 439px){
+    body{
+      background:#fff;
+    }
     #app{
       padding-top: 40px;
       width: 100%;

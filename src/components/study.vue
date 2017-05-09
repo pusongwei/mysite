@@ -109,6 +109,7 @@ export default {
 			})
 		},
 	    insert () {
+	    	console.log( typeof this.text)
 	    	this.$http.post('https://www.pusongwei.com/api.php',{
 				title:this.title,
 				con:this.text,
@@ -290,7 +291,7 @@ export default {
 		font-size: 16px;
 	}
 	.myTxt{
-		display: none;
+		display: block;
 	}
 @media all and (max-width: 439px){
 	.study{

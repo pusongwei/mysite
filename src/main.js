@@ -18,17 +18,17 @@ var store = new Vuex.Store({
         loadingShow : false
     },
     mutations:{
-        showUserName( event,flag){
+        showUserNameme( event,flag){
             store.state.loadingShow = flag;
         }
     }
 })
 Vue.http.interceptors.push((request, next)  =>{
-  store.commit('showUserName',true);
+  store.commit('showUserNameme',true);
 
   next((response) => {
 
-    store.commit('showUserName',false);
+    store.commit('showUserNameme',false);
     return response;
   });
 
@@ -37,7 +37,7 @@ new Vue({
 	el: '#app',
 	components: {Swiper},
 	router,
-	store:store,
+	store,
 	methods: {
 	onSlideChangeStart (currentPage) {
 		

@@ -18,31 +18,36 @@
 			</div>
 		</div>
 		<button @click='abc'>点击</button>
+		<div class="bg">
+			<bgImgRotate></bgImgRotate>
+		</div>
 	</div>
 </template>
 
 <script>
+import bgImgRotate from '@/components/base/bgimg.vue'
 export default {
 	name: 'home',
+	components: {
+		bgImgRotate
+	},
 	data (){
 		return {
 			show:false,
 			skill : [['html+css',80],['html5+css3',80],['javascript',80],['jquery、zepto',80],['vue',70],['angular',60],['php',40],['nodejs',40],['mysql',30]]
 		}
 	},
-	created (){
+	mounted (){
 		this.init()
 	},
 	methods :{
 		init (){
 			var that = this;
-			setTimeout(function(){
-				var span = that.$refs.spans;
-				for(var i=0;i<span.length;i++){
-					span[i].childNodes[0].style.width = that.skill[i][1]+"%";
-				}
-				that.show = true;
-			},1000)
+			var span = that.$refs.spans;
+			for(var i=0;i<span.length;i++){
+				span[i].childNodes[0].style.width = that.skill[i][1]+"%";
+			}
+			that.show = true;
 		},
 		abc (){
 			this.show = !this.show;
@@ -52,6 +57,19 @@ export default {
 </script>
 
 <style lang='less' scoped>
+.bg{
+	position: absolute;
+	left:0;
+	top: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 5;
+	padding-top: 100px;
+}
+button{
+	position: relative;
+	z-index: 6;
+}
 .home{
 	margin-top: 100px;
 	display:flex;
@@ -62,7 +80,8 @@ export default {
 	.my{
 		width: 200px;
 		text-align: center;
-		line-height: 100%;
+		position: relative;
+		z-index: 10;
 		img{
 			width: 100px;
 			height: 100px;
@@ -72,6 +91,8 @@ export default {
 	.skill{
 		flex-grow:1;
 		margin-left: 50px;
+		position: relative;
+		z-index: 10;
 		div{
 			margin-top: 10px;
 			display:flex;
@@ -85,10 +106,6 @@ export default {
 					text-align: left;
 				}
 			}
-			b{
-				width: 120px;
-				display: block;
-			}
 			.span2{
 				display: inline-block;
 				width: 100%;
@@ -100,11 +117,32 @@ export default {
 				background:#00DDDD;
 			}
 		}
+		b{
+			width: 120px;
+			display: block;
+			color: #fff;
+		}
 	}
 }
 @media all and (max-width: 439px) {
+	.bg{
+		display: none;
+	}
 	.home{
 		padding:0;
+		margin-top: 20px;
+		display:block;
+		.my{
+			margin:0 auto;
+		}
+		.skill{
+			margin-left: 10px;
+			b{
+				width: 120px;
+				display: block;
+				color: #000;
+			}
+		}
 	}
 }
 .fade-enter-active {
